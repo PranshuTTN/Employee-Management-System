@@ -37,7 +37,7 @@ public class Employee {
     @NotBlank(message = "Role is required")
     private String role;
 
-    private String status; // ACTIVE, INACTIVE
+    private String status;
 
     private Long salary;
 }

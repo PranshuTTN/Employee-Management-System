@@ -20,13 +20,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    // GET all employees
     @GetMapping
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
-    // GET employee by ID
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
         Employee employee = employeeRepository.findById(id)
@@ -34,7 +32,6 @@ public class EmployeeController {
         return ResponseEntity.ok(employee);
     }
 
-    // POST create employee
     @PostMapping
     public ResponseEntity<Employee> createEmployee(@Valid @RequestBody Employee employee) {
         employee.setStatus("ACTIVE");
@@ -42,7 +39,6 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
-    // PUT update employee
     @PutMapping("/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,
                                                     @Valid @RequestBody Employee employeeDetails) {
@@ -61,7 +57,6 @@ public class EmployeeController {
         return ResponseEntity.ok(updated);
     }
 
-    // DELETE employee
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id) {
         Employee employee = employeeRepository.findById(id)
@@ -72,19 +67,16 @@ public class EmployeeController {
         return ResponseEntity.ok(response);
     }
 
-    // GET search employees
     @GetMapping("/search")
     public List<Employee> searchEmployees(@RequestParam String keyword) {
         return employeeRepository.searchEmployees(keyword);
     }
 
-    // GET employees by department
     @GetMapping("/department/{dept}")
     public List<Employee> getByDepartment(@PathVariable String dept) {
         return employeeRepository.findByDepartment(dept);
     }
 
-    // GET stats
     @GetMapping("/stats")
     public ResponseEntity<Map<String, Object>> getStats() {
         Map<String, Object> stats = new HashMap<>();
