@@ -258,19 +258,3 @@ curl -X DELETE http://localhost:8080/api/employees/7
 | Java version error | Ensure `JAVA_HOME` is set to JDK 17+ |
 
 ---
-
-## 📚 React Course Concepts Covered (Udemy)
-
-This POC covers the following React fundamentals from the course:
-
-- ✅ **React Components** (functional components)
-- ✅ **JSX** (all UI is written in JSX)
-- ✅ **Props** (passing data between parent/child)
-- ✅ **State Management** (useState hook)
-- ✅ **Side Effects** (useEffect for API calls)
-- ✅ **Event Handling** (onClick, onChange, onSubmit)
-- ✅ **Controlled Forms** (form state bound to React)
-- ✅ **Conditional Rendering** (view switching)
-- ✅ **List Rendering** (`.map()` for employee cards)
-- ✅ **HTTP Requests** (Axios with async/await)
-- ✅ **Component Lifecycle** (mount → fetch → render)
